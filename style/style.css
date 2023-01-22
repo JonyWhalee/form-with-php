@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: sans-serif;
+}
+.contact-form {
+    --form-ok-color: #4caf50;
+    --form-error-color: #f44336;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+.contact-form > * {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    width: 100%;
+    /* border-radius: 0.4rem; */
+}
+.contact-form textarea {
+    resize: none;
+}
+.contact-form legend,
+.contact-form-reponse {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+.contact-form input,
+.contact-form textarea {
+    font-family: sans-serif;
+}
+.contact-form input[type="submit"] {
+    width: 50%;
+    font-weight: 900;
+    cursor: pointer;
+}
+.contact-form-loader {
+    text-align: center;
+}
+.contact-form-response {
+    text-align: center;
+}
+.contact-form *::placeholder {
+    color: #000;
+}
+
+.contact-form [required]:valid {
+    border: thin solid var(--form-ok-color);
+}
+.contact-form [required]:invalid {
+    border: thin solid var(--form-error-color);
+}
+.contact-form-error {
+    margin-top: -1rem;
+    font-size: 80%;
+    background-color: var(--form-error-color);
+    color: #fff;
+    transition: all 800ms ease;
+}
+.contact-form-error.is-active {
+    display: block;
+    animation: show-menssage 1s 1 normal 0s ease-out both;
+}
+.none {
+    display: none;
+}
+
+@keyframes show-menssage {
+    0% {
+        visibility: hidden;
+        opacity: 0;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+    }
+}
